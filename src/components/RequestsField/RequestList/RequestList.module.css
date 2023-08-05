@@ -1,0 +1,40 @@
+.requestContainer {
+  display: flex;
+  gap: 1em;
+  font-size: .9em;
+  padding: .8em .5em;
+  border-left: 2px solid transparent;
+  cursor: pointer;
+}
+
+.requestContainer.selected {
+  background-color: #ffffff10;
+  border-color: #a896ff;
+}
+
+.requestContainer:hover {
+  background-color: #ffffff10;
+}
+
+.method {
+  width: 36px;
+}
+
+.method.get {
+  color: #a896ff;
+}
+.method.post {
+  color: #73d023;
+}
+.method.put {
+  color: #ff9b19;
+}
+.method.delete {
+  color: #f35731;
+}
+
+.name {
+  color: #ffffff70;
+}
+
+

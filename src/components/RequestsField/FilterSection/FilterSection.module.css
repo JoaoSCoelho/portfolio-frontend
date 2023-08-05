@@ -1,0 +1,63 @@
+.filterSection {
+  display: grid;
+  grid-template-columns: 6fr 2fr 2fr;
+  margin: .5em;
+  gap: .3em;
+}
+
+.filter {
+  border: 1px solid #ffffff20;
+  border-radius: 4px;
+  color: white;
+  padding: .8em .5em;
+  font-size: .9em;
+  width: 100%;
+}
+
+.filter::placeholder {
+  color: #ffffff20;
+}
+
+.selectContainer {
+  margin: .3em 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.selectContainer:hover {
+  background-color: #ffffff10;
+}
+
+.selectContainer label {
+  display: flex;
+  align-items: center;
+}
+
+.selectContainer .carets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.selectContainer .carets svg:first-of-type {
+  margin-bottom: -.2em;
+}
+
+.selectContainer .carets svg:nth-of-type(2) {
+  margin-top: -.2em;
+}
+
+.newReqButton {
+  margin: .3em 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.newReqButton:hover {
+  background-color: #ffffff10;
+}

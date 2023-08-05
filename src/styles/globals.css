@@ -133,6 +133,12 @@ input[type='submit'] {
   cursor: pointer;
 }
 
+button:disabled,
+input[type='button']:disabled,
+input[type='submit']:disabled {
+  cursor: default;
+}
+
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
   display: none;

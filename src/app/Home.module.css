@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(325deg, rgb(25, 0, 31) 0%, rgb(19, 0, 31) 33%, rgb(0, 13, 31) 66%, rgb(0, 29, 31) 100%);
+  min-height: 100vh;
+}
+
+.container {
+  width: 1280px;
+  height: 720px;
+  background-color: #2d2d2d;
+  border: 1px solid #ffffff20;
+  box-shadow: 20px 20px 10px #ffffff10;
+}
