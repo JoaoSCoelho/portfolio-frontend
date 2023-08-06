@@ -1,0 +1,20 @@
+.requestTabs {
+  border-bottom: 1px solid #ffffff20;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 1em;
+  font-size: .85em;
+  color: #ffffffc9;
+}
+
+.tab.docs {
+  border-left: 1px solid #ffffff20;
+  border-right: 1px solid #ffffff20;
+  border-bottom: 1px solid #2d2d2d;
+  margin-bottom: -1px;
+}

@@ -1,3 +1,4 @@
+import { RequestsProvider } from '@/contexts/requests'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { PropsWithChildren } from 'react'
@@ -23,7 +24,9 @@ const poppins = Poppins({
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-br" className={poppins.className}>
-      <body>{children}</body>
+      <body>
+        <RequestsProvider>{children}</RequestsProvider>
+      </body>
     </html>
   )
 }

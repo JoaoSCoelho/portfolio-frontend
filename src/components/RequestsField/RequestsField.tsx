@@ -8,27 +8,7 @@ export default function RequestsField() {
     <div className={styles.requestsField}>
       <Header />
       <FilterSection />
-      <RequestList
-        requests={[
-          {
-            name: 'get projects',
-            method: 'GET',
-          },
-          {
-            name: 'create project',
-            method: 'POST',
-          },
-          {
-            name: 'update project',
-            method: 'PUT',
-          },
-          {
-            name: 'delete project',
-            method: 'DELETE',
-          },
-        ]}
-        selectedRequest="create project"
-      />
+      <RequestList />
     </div>
   )
 }

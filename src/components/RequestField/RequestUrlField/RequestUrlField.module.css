@@ -1,0 +1,75 @@
+.requestUrlField {
+  background-color: #222222;
+  display: grid;
+  border-bottom: 1px solid #ffffff20;
+  grid-template-columns: 1fr 10fr 1.5fr;
+  gap: .5em;
+}
+
+.methodSelect {
+  padding: .5em;
+}
+
+.methodSelect.get {
+  color: #a896ff;
+}
+.methodSelect.post {
+  color: #73d023;
+}
+.methodSelect.put {
+  color: #ff9b19;
+}
+.methodSelect.delete {
+  color: #f35731;
+}
+
+.methodOption.get {
+  color: #a896ff;
+}
+.methodOption.post {
+  color: #73d023;
+}
+.methodOption.put {
+  color: #ff9b19;
+}
+.methodOption.delete {
+  color: #f35731;
+}
+
+.urlInputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.baseUrlTag {
+  font-size: .75em;
+  padding: .4em .5em;
+  color: white;
+  background-color: #a896ff;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.urlInput {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #ffffffe0;
+  font-size: .9em;
+  width: 100%;
+}
+
+.submitButton {
+  background-color: #a896ff;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: .9em;
+}
+
+.submitButton:hover {
+  opacity: .7;
+  transition: .3s;
+}

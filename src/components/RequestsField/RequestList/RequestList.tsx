@@ -1,20 +1,16 @@
+import { RequestsContext } from '@/contexts/requests'
+import { useContext } from 'react'
+
 import styles from './RequestList.module.css'
 
-export interface IRequest {
-  method: 'POST' | 'GET' | 'PUT' | 'DELETE'
-  name: string
-}
+export default function RequestList() {
+  const { requests, selectedRequest, setSelectedRequest } = useContext(RequestsContext)
 
-interface IRequestListProps {
-  requests: IRequest[]
-  selectedRequest: string
-}
-
-export default function RequestList({ requests, selectedRequest }: IRequestListProps) {
   return (
     <div className={styles.requestList}>
       {requests.map((request) => (
         <div
+          onClick={() => setSelectedRequest(request.name)}
           className={`${styles.requestContainer} ${
             selectedRequest === request.name ? styles.selected : ''
           }`}
