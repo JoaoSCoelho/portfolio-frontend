@@ -1,0 +1,48 @@
+.responseStatusField {
+  display: flex;
+  align-items: center;
+  padding: 0 .7em;
+  gap: .7em;
+  background-color: #222222;
+  height: 40px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.tag {
+  font-size: .85em;
+  padding: .3em;
+  background-color: #ffffff10;
+  color: #ffffffb0;
+}
+
+.statusCode {
+  font-weight: 500;
+}
+
+.statusCodeTag.ok {
+  background-color: #75ba24;
+}
+
+.statusCodeTag.created {
+  background-color: #75ba24;
+}
+
+.statusCodeTag.bad-request {
+  background-color: #ec8702;
+}
+
+.statusCodeTag.unauthorized {
+  background-color: #ec8702;
+}
+
+.statusCodeTag.not-found {
+  background-color: #ec8702;
+}
+
+.statusCodeTag.internal-server-error {
+  background-color: #e15251;
+}
+
+.statusCodeTag.erro-interno {
+  background-color: #e15251;
+}

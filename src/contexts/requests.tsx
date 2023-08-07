@@ -19,7 +19,8 @@ type RequestsContext = {
 export const RequestsContext = createContext<RequestsContext>(null!)
 
 export const RequestsProvider = ({ children }: PropsWithChildren) => {
-  const [selectedRequest, setSelectedRequest] = useState<string>('create project')
+  const [selectedRequest, setSelectedRequest] =
+    useState<string>('create project')
   const [requests, setRequests] = useState<IRequest[]>([
     {
       name: 'get projects',
@@ -27,9 +28,19 @@ export const RequestsProvider = ({ children }: PropsWithChildren) => {
       path: '/api/projects',
     },
     {
+      name: 'get technologies',
+      method: 'GET',
+      path: '/api/technologies',
+    },
+    {
       name: 'create project',
       method: 'POST',
       path: '/api/projects',
+    },
+    {
+      name: 'create technology',
+      method: 'POST',
+      path: '/api/technologies',
     },
     {
       name: 'update project',

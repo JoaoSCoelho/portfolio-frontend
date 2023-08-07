@@ -5,6 +5,7 @@ import { PropsWithChildren } from 'react'
 
 import '@/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css'
+import { ResponseProvider } from '@/contexts/response'
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-br" className={poppins.className}>
       <body>
-        <RequestsProvider>{children}</RequestsProvider>
+        <RequestsProvider>
+          <ResponseProvider>{children}</ResponseProvider>
+        </RequestsProvider>
       </body>
     </html>
   )

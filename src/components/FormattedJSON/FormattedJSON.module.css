@@ -1,0 +1,20 @@
+.pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  height: 100%;
+}
+
+.key {
+  color: #7ecf2b;
+}
+
+.string {
+  color: #f0e137;
+}
+
+.null, .number, .boolean {
+  color: #a896ff;
+}
