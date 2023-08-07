@@ -19,8 +19,7 @@ type RequestsContext = {
 export const RequestsContext = createContext<RequestsContext>(null!)
 
 export const RequestsProvider = ({ children }: PropsWithChildren) => {
-  const [selectedRequest, setSelectedRequest] =
-    useState<string>('create project')
+  const [selectedRequest, setSelectedRequest] = useState<string>('get projects')
   const [requests, setRequests] = useState<IRequest[]>([
     {
       name: 'get projects',

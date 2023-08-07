@@ -1,4 +1,146 @@
 .responseHtml {
-  overflow: visible;
   height: 100%;
+  overflow: auto;
+  padding: 1em;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+}
+
+.projectWrapper {
+  width: calc(50% - .25em);
+}
+
+.projectContainer {
+  width: 100%;
+  background-color: #ffffff10;
+  border-radius: 8px;
+  padding: .5em;
+}
+
+.projectContainer summary {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.projectContainer .name {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: white;
+  padding: .5em;
+  display: block;
+}
+
+.projectContainer .banner {
+  width: 100%;
+}
+
+.projectContainer .usedTechnologiesContainer {
+  display: flex;
+  align-items: center;
+  gap: .2em;
+}
+
+.projectContainer .usedTechnologiesContainer .technology {
+  padding: .2em;
+  background-color: #ffffff10;
+  border-radius: 4px;
+  font-size: .85em;
+  color: #ffffffb0;
+  display: flex;
+  align-items: center;
+  gap: .2em;
+}
+
+.projectContainer .usedTechnologiesContainer .technologyLogo {
+  height: 1.1em;
+}
+
+.projectContainer .linksContainer {
+  font-weight: normal;
+  margin: .5em 0;
+  display: flex;
+  gap: 1em;
+}
+
+.projectContainer .link {
+  display: flex;
+  align-items: center;
+  font-size: .9em;
+  color: #3e98ff;
+  text-decoration: underline;
+  transition: .15s;
+}
+
+.projectContainer .link:hover {
+  opacity: .7;
+}
+
+.projectContainer .link svg {
+  color: white;
+}
+
+.projectContainer[open] .showMore {
+  display: none;
+}
+
+.projectContainer .showMore {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+  height: 1em;
+}
+
+.projectContainer:hover .showMore svg {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  from {
+    font-size: 1em;
+  }
+  50% {
+    font-size: 1.2em;
+    transform: translateY(5px);
+  }
+  to {
+    font-size: 1em;
+  }
+}
+
+.projectContainer .description {
+  color: #ffffffb0;
+  font-size: .85em;
+  text-indent: 1em;
+  line-height: 1.1em;
+}
+
+.projectContainer .featuresContainer {
+  margin: .5em 0;
+}
+
+.projectContainer .featuresContainer strong {
+  color: white;
+  font-weight: normal;
+}
+
+.projectContainer .featuresContainer ul {
+  list-style: inside;
+  color: #ffffffb0;
+  font-size: .85em;
+  margin-top: .2em;
+}
+
+.notFoundScreen {
+  height: 100%;
+  background-image: url('../../assets/404.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 50px;
 }
