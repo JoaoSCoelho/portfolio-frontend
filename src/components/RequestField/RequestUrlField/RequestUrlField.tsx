@@ -34,7 +34,12 @@ export default function RequestUrlField() {
       const response = await api[
         selectedRequestObj.method.toLowerCase() as Lowercase<IRequest['method']>
       ](selectedRequestObj.path)
-      console.log(response)
+      console.log(
+        response,
+        RESPONSE_STATUS_TEXT,
+        RESPONSE_STATUS_TEXT[response.status],
+        response.status,
+      )
       setResponse({
         body: response.data,
         headers: response.headers,
@@ -46,11 +51,19 @@ export default function RequestUrlField() {
       setIsLoading(false)
     } catch (error: any) {
       console.error(error)
+      console.log(
+        RESPONSE_STATUS_TEXT,
+        RESPONSE_STATUS_TEXT[error.response?.status],
+        error.response?.status,
+      )
       setResponse({
         body: error.response?.data ?? 'Erro ao fazer requisição 😥',
         headers: error.response?.headers ?? {},
         statusCode: error.response?.status ?? 0,
-        statusText: error.response?.statusText ?? 'Erro interno',
+        statusText:
+          error.response?.statusText ??
+          RESPONSE_STATUS_TEXT[error.response?.status] ??
+          'Erro interno',
         response: error.response,
       })
       setIsLoading(false)
