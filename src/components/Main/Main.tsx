@@ -1,6 +1,7 @@
 import { ResponseContext } from '@/contexts/response'
 import { useContext } from 'react'
 
+import APIDocumentation from '../APIDocumentation/APIDocumentation'
 import Aside from '../Aside/Aside'
 import RequestField from '../RequestField/RequestField'
 import RequestsField from '../RequestsField/RequestsField'
@@ -19,6 +20,12 @@ export default function Main() {
       <div className={styles.right}>
         <RequestField />
         <ResponseField />
+
+        {tab !== 'html' && (
+          <div className={styles.doc}>
+            <APIDocumentation />
+          </div>
+        )}
 
         <div
           className={`${styles.response} ${tab === 'html' ? styles.html : ''}`}

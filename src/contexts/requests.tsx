@@ -47,11 +47,6 @@ export const RequestsProvider = ({ children }: PropsWithChildren) => {
       method: 'PUT',
       path: '/api/projects/:id',
     },
-    {
-      name: 'delete project',
-      method: 'DELETE',
-      path: '/api/projects/:id',
-    },
   ])
 
   return (

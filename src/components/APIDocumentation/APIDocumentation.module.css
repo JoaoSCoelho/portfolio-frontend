@@ -1,0 +1,76 @@
+.documentation {
+  padding: .3em;
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+}
+
+.route {
+  background-color: #ffffff10;
+  padding: .3em;
+}
+
+.route details summary {
+  display: flex;
+  align-items: center;
+  color: #ffffffb0;
+  font-size: .9em;
+
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.route details summary .left {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.route details summary .caret {
+  transition: .3s;
+}
+
+.route details[open] summary .caret {
+  transform: rotate(90deg);
+}
+
+.route details summary .right {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.route .method {
+  padding: .2em .3em;
+  font-weight: normal;
+  color: white;
+  border-radius: 4px;
+  font-size: .9em;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route .method.get {
+  background-color: #a896ff;
+}
+
+.route .method.post {
+  background-color: #73d023;
+}
+
+.route .method.put {
+  background-color: #ff9b19;
+}
+
+.route .method.delete {
+  background-color: #f35731;
+}
+
+.route .description {
+  margin-top: 1em;
+  font-size: .8em;
+  color: #ffffffb0;
+}
