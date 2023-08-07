@@ -14,12 +14,14 @@ export default function ResponseStatusField() {
       {response && (
         <>
           <div
-            className={`${styles.statusCodeTag} ${styles[slugify(response.statusText)]} ${
-              styles.tag
-            }`}
+            className={`${styles.statusCodeTag} ${
+              styles[slugify(response.statusText)]
+            } ${styles.tag}`}
           >
             <span
-              className={`${styles.statusCode} ${styles[slugify(response.statusText)]}`}
+              className={`${styles.statusCode} ${
+                styles[slugify(response.statusText)]
+              }`}
             >
               {response.statusCode}
             </span>
@@ -32,7 +34,9 @@ export default function ResponseStatusField() {
 
           <div className={`${styles.sizeTag} ${styles.tag}`}>
             {/* Prettify it */}
-            <span className={styles.size}>{response.headers?.['content-length']} B</span>
+            <span className={styles.size}>
+              {response.headers?.['content-length']} B
+            </span>
           </div>
         </>
       )}

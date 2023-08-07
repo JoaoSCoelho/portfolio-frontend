@@ -1,4 +1,7 @@
-export function syntaxHighlight(json: string, stylesObj: { [key: string]: string }) {
+export function syntaxHighlight(
+  json: string,
+  stylesObj: { [key: string]: string },
+) {
   json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
   return json.replace(

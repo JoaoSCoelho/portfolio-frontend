@@ -1,4 +1,8 @@
-import { BsCaretDownFill, BsCaretUpFill, BsFillPlusCircleFill } from 'react-icons/bs'
+import {
+  BsCaretDownFill,
+  BsCaretUpFill,
+  BsFillPlusCircleFill,
+} from 'react-icons/bs'
 
 import styles from './FilterSection.module.css'
 

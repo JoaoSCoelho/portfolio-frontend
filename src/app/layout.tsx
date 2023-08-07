@@ -1,11 +1,11 @@
 import { RequestsProvider } from '@/contexts/requests'
+import { ResponseProvider } from '@/contexts/response'
 import { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 
 import '@/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css'
-import { ResponseProvider } from '@/contexts/response'
 
 export const metadata: Metadata = {
   title: {

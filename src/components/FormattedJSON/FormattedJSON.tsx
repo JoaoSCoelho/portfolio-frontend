@@ -7,7 +7,9 @@ export default function FormattedJSON({ json }: { json: any }) {
     <pre
       className={styles.pre}
       dangerouslySetInnerHTML={{
-        __html: json ? syntaxHighlight(JSON.stringify(json, null, 2), styles) : '',
+        __html: json
+          ? syntaxHighlight(JSON.stringify(json, null, 2), styles)
+          : '',
       }}
     ></pre>
   )

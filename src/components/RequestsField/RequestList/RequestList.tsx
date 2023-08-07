@@ -4,7 +4,8 @@ import { useContext } from 'react'
 import styles from './RequestList.module.css'
 
 export default function RequestList() {
-  const { requests, selectedRequest, setSelectedRequest } = useContext(RequestsContext)
+  const { requests, selectedRequest, setSelectedRequest } =
+    useContext(RequestsContext)
 
   return (
     <div className={styles.requestList}>
@@ -16,7 +17,11 @@ export default function RequestList() {
           }`}
           key={request.method + '-' + request.name}
         >
-          <span className={`${styles.method} ${styles[request.method.toLowerCase()]}`}>
+          <span
+            className={`${styles.method} ${
+              styles[request.method.toLowerCase()]
+            }`}
+          >
             {request.method === 'DELETE' ? 'DEL' : request.method}
           </span>
           <span className={styles.name}>{request.name}</span>
