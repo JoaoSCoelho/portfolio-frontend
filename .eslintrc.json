@@ -98,8 +98,7 @@
     "prettier/prettier": [
       "error",
       {
-        "semi": false,
-        "printWidth": 90
+        "semi": false
       }
     ],
     "no-use-before-define": "off",
