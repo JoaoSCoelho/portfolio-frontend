@@ -46,3 +46,7 @@
 .statusCodeTag.erro-interno {
   background-color: #e15251;
 }
+
+.loading {
+  color: #ffffffb0;
+}

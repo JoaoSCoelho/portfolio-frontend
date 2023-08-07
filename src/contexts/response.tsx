@@ -20,6 +20,8 @@ type ResponseContext = {
   setResponse: SetState<IResponse | undefined>
   tab: Tab
   setTab: SetState<Tab>
+  isLoading: boolean
+  setIsLoading: SetState<boolean>
 }
 
 export const ResponseContext = createContext<ResponseContext>(null!)
@@ -27,9 +29,12 @@ export const ResponseContext = createContext<ResponseContext>(null!)
 export const ResponseProvider = ({ children }: PropsWithChildren) => {
   const [response, setResponse] = useState<IResponse>()
   const [tab, setTab] = useState<Tab>('preview')
+  const [isLoading, setIsLoading] = useState(false)
 
   return (
-    <ResponseContext.Provider value={{ response, setResponse, tab, setTab }}>
+    <ResponseContext.Provider
+      value={{ response, setResponse, tab, setTab, isLoading, setIsLoading }}
+    >
       {children}
     </ResponseContext.Provider>
   )

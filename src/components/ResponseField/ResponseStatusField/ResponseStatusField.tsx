@@ -1,5 +1,6 @@
 'use client'
 
+import Loading from '@/components/Loading/Loading'
 import { ResponseContext } from '@/contexts/response'
 import { slugify } from '@/utils/slugify'
 import { useContext } from 'react'
@@ -7,7 +8,7 @@ import { useContext } from 'react'
 import styles from './ResponseStatusField.module.css'
 
 export default function ResponseStatusField() {
-  const { response } = useContext(ResponseContext)
+  const { response, isLoading } = useContext(ResponseContext)
 
   return (
     <div className={styles.responseStatusField}>
@@ -29,7 +30,9 @@ export default function ResponseStatusField() {
           </div>
 
           <div className={`${styles.timeTag} ${styles.tag}`}>
-            <span className={styles.time}> ms</span>
+            <span className={styles.time}>
+              {response.headers?.['request-duration']} ms
+            </span>
           </div>
 
           <div className={`${styles.sizeTag} ${styles.tag}`}>
@@ -40,6 +43,7 @@ export default function ResponseStatusField() {
           </div>
         </>
       )}
+      {isLoading && <Loading className={styles.loading} />}
     </div>
   )
 }

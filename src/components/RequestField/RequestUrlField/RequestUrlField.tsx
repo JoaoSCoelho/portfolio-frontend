@@ -1,5 +1,6 @@
 'use client'
 
+import Loading from '@/components/Loading/Loading'
 import { IRequest, RequestsContext } from '@/contexts/requests'
 import { ResponseContext } from '@/contexts/response'
 import api from '@/services/api'
@@ -7,16 +8,27 @@ import { useContext } from 'react'
 
 import styles from './RequestUrlField.module.css'
 
+const RESPONSE_STATUS_TEXT: { [key: number]: string } = {
+  200: 'OK',
+  201: 'Created',
+  400: 'Bad request',
+  401: 'Unauthorized',
+  404: 'Not Found',
+  500: 'Internal server error',
+}
+
 export default function RequestUrlField() {
   const { selectedRequest, requests, setRequests } = useContext(RequestsContext)
   const selectedRequestObj = requests.find(
     (req) => req.name === selectedRequest,
   )
 
-  const { setResponse } = useContext(ResponseContext)
+  const { setResponse, setIsLoading, isLoading } = useContext(ResponseContext)
 
   const makeRequest = async () => {
     if (!selectedRequestObj) return
+
+    setIsLoading(true)
 
     try {
       const response = await api[
@@ -27,9 +39,11 @@ export default function RequestUrlField() {
         body: response.data,
         headers: response.headers,
         statusCode: response.status,
-        statusText: response.statusText,
+        statusText:
+          response.statusText ?? RESPONSE_STATUS_TEXT[response.status],
         response: response,
       })
+      setIsLoading(false)
     } catch (error: any) {
       console.error(error)
       setResponse({
@@ -39,6 +53,7 @@ export default function RequestUrlField() {
         statusText: error.response?.statusText ?? 'Erro interno',
         response: error.response,
       })
+      setIsLoading(false)
     }
   }
 
@@ -124,7 +139,7 @@ export default function RequestUrlField() {
           onClick={() => makeRequest()}
           className={styles.submitButton}
         >
-          Send
+          {isLoading ? <Loading color="white" /> : 'Send'}
         </button>
       </div>
     </div>
