@@ -1,10 +1,7 @@
-import { ResponseContext } from '@/contexts/response'
-import { useContext } from 'react'
-
 import styles from './ResponseHTML.module.css'
 
 export default function ResponseHTML() {
-  const { response } = useContext(ResponseContext)
+  // const { response } = useContext(ResponseContext)
 
   return (
     <div className={styles.responseHtml}>

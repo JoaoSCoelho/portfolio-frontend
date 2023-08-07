@@ -1,24 +1,29 @@
 'use client'
 
 import FormattedJSON from '@/components/FormattedJSON/FormattedJSON'
+import { RequestsContext } from '@/contexts/requests'
 import { ResponseContext } from '@/contexts/response'
-import jsonpath from 'jsonpath'
+import { JSONPath } from 'jsonpath-plus'
 import { useContext, useEffect, useState } from 'react'
 
 import styles from './ResponseInJSON.module.css'
 
 export default function ResponseInJSON({ type }: { type: 'body' | 'headers' }) {
   const { response } = useContext(ResponseContext)
+  const { selectedRequest } = useContext(RequestsContext)
   const [json, setJson] = useState()
   const [expression, setExpression] = useState<string>('')
 
   const format = () => {
     return expression && response
-      ? jsonpath.query(response[type], expression)
+      ? JSONPath({ json: response[type], path: expression })
       : response?.[type]
   }
 
-  useEffect(() => setJson(undefined), [type])
+  useEffect(() => {
+    setExpression('')
+    setJson(undefined)
+  }, [type, selectedRequest, response])
 
   return (
     <div className={styles.responseInJSON}>
@@ -34,7 +39,7 @@ export default function ResponseInJSON({ type }: { type: 'body' | 'headers' }) {
         >
           <input
             onChange={(ev) => setExpression(ev.target.value)}
-            defaultValue={expression}
+            value={expression}
             type="text"
             placeholder="$.projects[*].name (JSON path)"
           />

@@ -49,6 +49,7 @@ export default function RequestUrlField() {
           className={`${styles.methodSelect} ${
             styles[selectedRequestObj?.method.toLowerCase() ?? 'GET']
           }`}
+          value={selectedRequestObj?.method}
           onChange={(ev) => {
             setRequests((reqs) =>
               reqs.reduce(
@@ -68,28 +69,24 @@ export default function RequestUrlField() {
         >
           <option
             value="GET"
-            selected={selectedRequestObj?.method === 'GET'}
             className={`${styles.methodOption} ${styles.get}`}
           >
             GET
           </option>
           <option
             value="POST"
-            selected={selectedRequestObj?.method === 'POST'}
             className={`${styles.methodOption} ${styles.post}`}
           >
             POST
           </option>
           <option
             value="PUT"
-            selected={selectedRequestObj?.method === 'PUT'}
             className={`${styles.methodOption} ${styles.put}`}
           >
             PUT
           </option>
           <option
             value="DELETE"
-            selected={selectedRequestObj?.method === 'DELETE'}
             className={`${styles.methodOption} ${styles.delete}`}
           >
             DELETE

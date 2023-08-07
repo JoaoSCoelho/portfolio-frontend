@@ -8,7 +8,7 @@ import styles from './ResponseStatusField.module.css'
 
 export default function ResponseStatusField() {
   const { response } = useContext(ResponseContext)
-  console.log(response)
+
   return (
     <div className={styles.responseStatusField}>
       {response && (
