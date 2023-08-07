@@ -34,7 +34,7 @@ export default function RequestUrlField() {
       const response = await api[
         selectedRequestObj.method.toLowerCase() as Lowercase<IRequest['method']>
       ](selectedRequestObj.path)
-
+      console.log(response)
       setResponse({
         body: response.data,
         headers: response.headers,
