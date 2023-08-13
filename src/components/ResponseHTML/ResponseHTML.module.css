@@ -144,3 +144,7 @@
   background-position: center;
   background-position-y: 50px;
 }
+
+.projectContainer .previewImage {
+  width: 100%;
+}

@@ -29,8 +29,8 @@ export default function ResponseHTML() {
       {response?.body?.projects ? (
         <div className={styles.projectsContainer}>
           {response.body.projects.map((project: IProject) => (
-            <div className={styles.projectWrapper}>
-              <details className={styles.projectContainer} key={project.id}>
+            <div className={styles.projectWrapper} key={project.id}>
+              <details className={styles.projectContainer}>
                 <summary>
                   <strong className={styles.name}>{project.name}</strong>
                   {(project.bannerUrl || project.previewImageUrl) && (
@@ -96,6 +96,16 @@ export default function ResponseHTML() {
                       ))}
                     </ul>
                   </div>
+                ) : (
+                  ''
+                )}
+
+                {project.previewImageUrl && project.bannerUrl ? (
+                  <img
+                    className={styles.previewImage}
+                    src={project.previewImageUrl}
+                    alt={project.name}
+                  />
                 ) : (
                   ''
                 )}
